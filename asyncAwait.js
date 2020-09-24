@@ -1,3 +1,4 @@
+// create the promise
 const promisePrintString = (string) => {
     const success = true;
 
@@ -14,6 +15,7 @@ const promisePrintString = (string) => {
     });
 };
 
+// consume the promise
 async function main() {
     try {
         await promisePrintString("A");
@@ -25,17 +27,5 @@ async function main() {
 
     console.log("Synchronous");
 }
-
-// const main = async () => {
-//     try {
-//         await promisePrintString("A");
-//         await promisePrintString("B");
-//         await promisePrintString("C");
-//     } catch (err) {
-//         console.log(err.message);
-//     }
-
-//     console.log("Synchronous");
-// };
 
 main();

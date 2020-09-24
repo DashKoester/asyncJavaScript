@@ -1,3 +1,4 @@
+// create the promise
 const promisePrintString = (string) => {
     const success = true;
 
@@ -14,6 +15,7 @@ const promisePrintString = (string) => {
     });
 };
 
+// consume the promise
 const main = () => {
     promisePrintString("A")
         .then(() => promisePrintString("B"))
