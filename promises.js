@@ -1,32 +1,28 @@
-function promisePrintString(string) {
-  const success = true;
-  
-  return new Promise((resolve, reject) => {
-    setTimeout(
-      () => {
-        if (success) {
-          console.log(string);
-          resolve();
-        } else {
-          reject(new Error('An Error Occurred!'));
-          // throw new Error('An Error Occurred!');
-        }
-      }, 
-      Math.floor(Math.random() * 100) + 1
-    );
-  })
-}
+const promisePrintString = (string) => {
+    const success = true;
 
-function main() {
-  promisePrintString("A")
-    .then(() => promisePrintString("B"))
-    .then(() => promisePrintString("C"));
-    
-    
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (success) {
+                console.log(string);
+                resolve();
+            } else {
+                reject(new Error("An Error Occurred!"));
+                // throw new Error('An Error Occurred!');
+            }
+        }, Math.floor(Math.random() * 100) + 1);
+    });
+};
+
+const main = () => {
+    promisePrintString("A")
+        .then(() => promisePrintString("B"))
+        .then(() => promisePrintString("C"));
+
     // .catch((err) => console.log(err.message))
     // .finally(() => console.log('Cleanup!'));
 
     // console.log('Synchronous');
-}
+};
 
 main();
